@@ -1,61 +1,202 @@
-//html, body {
-//	height: 100%;
-//}
-
-//.wrapper {
-//	min-height: 100vh;
-//}
 
 .page {
+	padding-bottom: 200px;
 }
+
+// main-screen ====================================================================================================//
+
 .main-screen {
+	display: flex;
 	@include adaptiveValue("padding-top", 160, 80, 1170, 767, 1);
-	//min-height: 100vh;
-	//background: url('@img/main-screen/animals.png') 2000px 30px no-repeat;
 	background-color: #F4CB38;
-	@include adaptiveValue("padding-bottom", 310, 40);
+	position: relative;
+	@media (max-width: 767px) {
+		&::after{
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 100%;
+			background: url('@img/main-screen/animals.png') right 0/ cover no-repeat;
+			opacity: 0.4;
+		}
+	}
 	
-
-		&__container {
+	&__content {
+		@include adaptiveValue("padding-top", 120, 40);
+		flex: 0 0 100%;
+		@media (max-width: 767px) {
+			flex: 0 1 100%;
 		}
+	}
 
-		&__body {
-			max-width: 440px;
-			@include adaptiveValue("padding-top", 120, 40);
+	&__image-ibg {
+		flex: 0 0 50%;
+		transform: translate(-85%);
+		left: -10%;
+		@media (max-width: 767px) {
+			display: none;
 		}
-
-		&__title {
-			font-weight: 900;
-			@include adaptiveValue("font-size", 40, 28);
-			line-height: 122.5%; /* 49/40 */
-			@include adaptiveValue("padding-bottom", 24, 15);
-		}
-
-		&__text {
-			@include adaptiveValue("font-size", 19, 14);
-			line-height: 142.105263%; /* 27/19 */
-			@include adaptiveValue("padding-bottom", 63, 50);
-		}
-
-		&__button {
-			@include adaptiveValue("font-size", 17, 14);
-			font-weight: 700;
-			line-height: 123.529412%; /* 21/17 */
-			color: #fff;
-			padding: 23px 42px;
-		}
+	}
 }
+
+.content-main-screen {
+
+	&__container {
+		position: relative;
+		z-index: 2;
+	}
+
+	&__body {
+		width: 50%;
+		@include adaptiveValue("padding-bottom", 310, 200);
+		@media (max-width: 767px) {
+			width: 100%;
+			max-width: 500px;
+		}
+	}
+
+	&__title {
+		font-weight: 900;
+		@include adaptiveValue("font-size", 40, 28);
+		line-height: 122.5%; /* 49/40 */
+		@include adaptiveValue("padding-bottom", 24, 15);
+	}
+
+	&__text {
+		@include adaptiveValue("font-size", 19, 14);
+		line-height: 142.105263%; /* 27/19 */
+		@include adaptiveValue("padding-bottom", 63, 50);
+	}
+
+	&__button {
+		@include adaptiveValue("font-size", 17, 14);
+		font-weight: 700;
+		line-height: 123.529412%; /* 21/17 */
+		color: #fff;
+		padding: 23px 42px;
+	}
+}
+
 .button {
 
 	&_red {
-		//display: inline;
+		display: inline-block;
 		background-color: #ed1c4e;;
 		box-shadow: 0px 7px 35px rgba(242, 34, 84, 0.42);
 		border-radius: 110px;
 		transition: all 0.3s ease 0s;
 		&:hover {
-			background: #b90935;
+			background: #e10b41;
 			box-shadow: 0px 7px 35px rgba(242, 34, 84, 0.82);
+			transform: skew(-2deg, 2deg);
 		}
+	}
+}
+
+// pets ====================================================================================================//
+
+.pets {
+	position: relative;
+	z-index: 5;
+	margin: -150px 0px 0px 50px;
+	@media (max-width: 767px) {
+		margin: -150px 0px 0px 20px;
+	}
+
+	&__container {
+	}
+
+	&__content {
+		max-width: 550px;
+		position: relative;
+		@media (max-width: 767px) {
+			max-width: 250px;
 		}
+	}
+	
+	&__item {
+	}
+}
+.item-pets {
+	display: block;
+	padding: 20px 30px 40px 30px;
+	background-color: #FFFFFF;
+	box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+	border-radius: 16px;
+	height: 208px;
+	width: 220px;
+	&:hover{
+		.item-pets__image{
+			transform: scale(1.1);
+		}
+		.item-pets__icon{
+			transform: translate(5px);
+		}
+	}
+	
+
+	&__link {
+		display: flex;
+		align-items: center;
+	}
+
+	&__sub-title {
+		margin-right: 12px;
+		font-weight: 700;
+		@include adaptiveValue("font-size", 16, 14);
+		line-height: 125%; /* 20/16 */
+		&_r {
+			color: #F07530;
+		}
+		&_g {
+			color: #55BC31;
+		}
+	}
+
+	&__icon {
+		display: flex;
+		transition: all 0.3s ease 0s;
+	}
+
+	&__image {
+		transition: all 0.3s ease 0s;
+	}
+}
+.slick-list {
+	overflow: hidden;
+}
+.slick-track{
+	display: flex;
+	gap: 30px;
+	height: 500px;
+}
+
+/* Стрелки*/
+.slick-arrow{
+	position: absolute;
+	top: 80px;
+	z-index: 10;
+	font-size: 0;
+	height: 60px;
+	width: 105px;
+	opacity: 0.7;
+	transition: all 0.3s ease 0s;
+	&:hover{
+		opacity: 1;
+	}
+}
+/* Стрелка влево */
+.slick-arrow.slick-prev{
+	left: -60px;
+	background: url('@img/pets/icon/left.svg') 0 0 no-repeat;
+	@media (max-width: 767px) {
+		left: -50px;
+	}
+}
+/* Стрелка вправо */
+.slick-arrow.slick-next{
+	right: -85px;
+	background: url('@img/pets/icon/right.svg') 0 0 no-repeat;
 }

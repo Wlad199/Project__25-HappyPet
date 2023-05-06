@@ -4,7 +4,17 @@ import { isMobile } from "./functions.js";
 import { flsModules } from "./modules.js";
 
 
-// Функционал слайдера-слик (MW 3.2)
-//$(document).ready(function () {
-//	$('.comment__body').slick();
-//})
+// Функционал слайдера - слик(MW 3.2)
+$(document).ready(function () {
+	$('.pets__content').slick({
+		slidesToShow: 2,
+		responsive: [
+			{
+				breakpoint: 767,
+				settings: {
+					slidesToShow: 1,
+				}
+			},
+		],
+	});
+})
