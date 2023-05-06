@@ -1,9 +1,19 @@
+//html, body {
+//	height: 100%;
+//}
+
+//.wrapper {
+//	min-height: 100vh;
+//}
+
 .page {
-	background-color: #F4CB38;
-	@include adaptiveValue("padding-top", 160, 80, 1170, 767, 1);
 }
 .main-screen {
-	//height: 100vh;
+	@include adaptiveValue("padding-top", 160, 80, 1170, 767, 1);
+	//min-height: 100vh;
+	//background: url('@img/main-screen/animals.png') 2000px 30px no-repeat;
+	background-color: #F4CB38;
+	@include adaptiveValue("padding-bottom", 310, 40);
 	
 
 		&__container {
