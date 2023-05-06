@@ -1,0 +1,246 @@
+
+// Burger (**==MW==**) ====================================================================================================//
+
+// Запрещаем скролл основного контента при открытом бургере
+body._lock {
+	overflow: hidden;
+}
+// Прячем бургер на больших экранах
+.menu__icon {
+	display: none;
+}
+
+@media (max-width: $mobile) {
+	.menu__icon {
+		display: block;
+		position: relative;
+		width: rem(30);
+		height: rem(18);
+		cursor: pointer;
+		z-index: 5;
+	// Три полоски
+		span,
+		&::before,
+		&::after {
+			content: "";
+			transition: all 0.3s ease 0s;
+			right: 0;
+			position: absolute;
+			width: 100%;
+			height: rem(2); //10%
+			background-color: #000;
+		}
+		&::before {
+			top: 0;
+		}
+		&::after {
+			bottom: 0;
+		}
+		span {
+			top: calc(50% - rem(1)); //transform: scale(1) translate(0px -50%);
+		}
+	}
+
+	.menu__icon._active {
+		span {
+			width: 0;
+		}
+		&::before,
+		&::after {
+		}
+		&::before {
+			top: calc(50% - rem(1));
+			transform: rotate(-45deg);
+		}
+		&::after {
+			bottom: calc(50% - rem(1));
+			transform: rotate(45deg);
+		}
+	}
+
+	.menu__body {
+		position: fixed;
+		top: 0;
+		left: -100%;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.9);
+		padding: 100px 30px 30px 30px;
+		transition: left 0.3s ease 0s;
+		overflow: auto; // Добавляем скролл
+
+		// Рисуем шапку
+		&::before {
+			content: '';
+			position: fixed;
+			width: 100%;
+			top: 0;
+			left: 0;
+			height: 80px; // Высота шапки
+			background-color: #F4CB38;
+			z-index: 2;
+		}
+	}
+
+	// Выезд меню-бургера при нажатии на бургер
+	.menu__body._active {
+		left: 0;
+	}
+}
+
+//  ====================================================================================================//
+
+.header {
+	background-color: #F4CB38;
+
+	&__container {
+	}
+
+	&__menu {
+		//min-height: 162px;
+		@include adaptiveValue("padding-top", 40, 0, 1170, 767, 1);
+		@include adaptiveValue("padding-bottom", 40, 0, 1170, 767, 1);
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+}
+.menu {
+
+	&__body {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		@media (max-width: 767px) {
+			color: #fff;
+			display: block;
+		}
+	}
+
+	&__logo {
+		display: block;
+		transform: translate(0, 9%);
+		position: relative;
+		z-index: 5;
+		img {
+			transition: all 0.3s ease 0s;
+		}
+		img:hover{
+			transform: skew(-5deg, 5deg);
+		}
+	}
+
+	&__list {
+		display: flex;
+		@include adaptiveValue("padding-right", 80, 30, 1170, 1000, 1);
+		li {
+			&:not(:last-child){
+				@include adaptiveValue("margin-right", 50, 15, 1170, 767, 2);
+			}
+			transition: all 0.3s ease 0s;
+			&:hover {
+				color: #b80e38;
+				transform: skew(3deg, -3deg);
+				&:not(:last-child, :first-child){
+					transform: skew(-3deg, 3deg);
+				}
+			}
+		}
+		@media (max-width: 767px) {
+			display: block;
+			text-align: center;
+			margin: 0px 0px 30px 0px;
+			li {
+				font-size: 50px;
+				font-weight: 500;
+			}
+		}
+	}
+
+	&__phone {
+		text-align: center;
+		transition: all 0.3s ease 0s;
+		&:hover {
+			color: #b80e38;
+			path {
+				fill: #b80e38;
+			}
+		}
+		@media (max-width: 767px) {
+			padding-bottom: 20px;
+		}
+	}
+
+	&__buscket {
+	}
+}
+.menu-link {
+	font-size: 15px;
+	line-height: 120%; /* 18/15 */
+
+	&_main {
+		font-weight: 700;
+		position: relative;
+		&::after{
+			content: '';
+			position: absolute;
+			bottom: -8px;
+			left: 0;
+			height: 1px;
+			width: 100%;
+			background-color: rgba(0, 0, 0, 0.21);
+			@media (max-width: 767px) {
+				background-color: #fff;
+				bottom: -4px;
+			}
+		}
+	}
+}
+.phone-menu {
+	display: flex;
+	align-items: center;
+	font-weight: 700;
+	font-size: 15px;
+	line-height: 18px;
+	@include adaptiveValue("padding-right", 80, 20, 1170, 1000, 1);
+	@media (max-width: 992px) {
+		display: none;
+	}
+
+	&__image {
+		margin-right: 12px;
+		path {
+			transition: all 0.3s ease 0s;
+		}
+	}
+
+	&__number {
+	}
+}
+.buscket-menu {
+	display: flex;
+	align-items: center;
+	font-weight: 400;
+	font-size: 15px;
+	line-height: 18px;
+	transition: all 0.3s ease 0s;
+	&:hover {
+		color: #b80e38;
+		circle{
+				fill: #b80e38
+		}
+	}
+	@media (max-width: 767px) {
+		justify-content: center;
+	}
+
+	&__icon {
+		margin-right: 12px;
+		circle {
+			transition: all 0.3s ease 0s;
+		}
+	}
+
+	&__price {
+	}
+}
