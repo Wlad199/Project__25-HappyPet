@@ -1,0 +1,51 @@
+.page {
+	background-color: #F4CB38;
+	@include adaptiveValue("padding-top", 160, 80, 1170, 767, 1);
+}
+.main-screen {
+	//height: 100vh;
+	
+
+		&__container {
+		}
+
+		&__body {
+			max-width: 440px;
+			@include adaptiveValue("padding-top", 120, 40);
+		}
+
+		&__title {
+			font-weight: 900;
+			@include adaptiveValue("font-size", 40, 28);
+			line-height: 122.5%; /* 49/40 */
+			@include adaptiveValue("padding-bottom", 24, 15);
+		}
+
+		&__text {
+			@include adaptiveValue("font-size", 19, 14);
+			line-height: 142.105263%; /* 27/19 */
+			@include adaptiveValue("padding-bottom", 63, 50);
+		}
+
+		&__button {
+			@include adaptiveValue("font-size", 17, 14);
+			font-weight: 700;
+			line-height: 123.529412%; /* 21/17 */
+			color: #fff;
+			padding: 23px 42px;
+		}
+}
+.button {
+
+	&_red {
+		//display: inline;
+		background-color: #ed1c4e;;
+		box-shadow: 0px 7px 35px rgba(242, 34, 84, 0.42);
+		border-radius: 110px;
+		transition: all 0.3s ease 0s;
+		&:hover {
+			background: #b90935;
+			box-shadow: 0px 7px 35px rgba(242, 34, 84, 0.82);
+		}
+		}
+}

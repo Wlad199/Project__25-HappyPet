@@ -92,18 +92,23 @@ body._lock {
 
 .header {
 	background-color: #F4CB38;
+	position: fixed;
+	width: 100%;
+	z-index: 50;
 
 	&__container {
 	}
 
 	&__menu {
-		//min-height: 162px;
 		@include adaptiveValue("padding-top", 40, 0, 1170, 767, 1);
 		@include adaptiveValue("padding-bottom", 40, 0, 1170, 767, 1);
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
 	}
+}
+.header._header-scroll .header__menu {
+	padding: 0px 0px;
 }
 .menu {
 
@@ -149,7 +154,7 @@ body._lock {
 		@media (max-width: 767px) {
 			display: block;
 			text-align: center;
-			margin: 0px 0px 30px 0px;
+			padding: 0px 0px 30px 0px;
 			li {
 				font-size: 50px;
 				font-weight: 500;
