@@ -170,7 +170,7 @@
 .slick-track{
 	display: flex;
 	gap: 30px;
-	height: 500px;
+	padding-bottom: 25px;
 }
 
 /* Стрелки*/
@@ -199,4 +199,239 @@
 .slick-arrow.slick-next{
 	right: -85px;
 	background: url('@img/pets/icon/right.svg') 0 0 no-repeat;
+}
+
+// why-choose-us ====================================================================================================//
+
+.why-choose-us {
+	@include adaptiveValue("padding-top", 130, 50);
+	@include adaptiveValue("padding-bottom", 110, 40);
+
+	&__container {
+	}
+
+	&__title {
+		@include adaptiveValue("padding-bottom", 70, 35);
+	}
+
+	&__content {
+		display: flex;
+		@include adaptiveValue("gap", 30, 15);
+		@media (max-width: 767px) {
+			flex-wrap: wrap;
+		}
+	}
+
+	&__item {
+		flex: 0 1 33.333%;
+		display: flex;
+		align-items: center;
+		@include adaptiveValue("gap", 27, 10);
+		@media (max-width: 767px) {
+			flex: 0 1 100%;
+		}
+	}
+}
+
+.item-why-choose-us {
+
+	&__icon {
+	}
+
+	&__body {
+	}
+
+	&__subtitle {
+		font-weight: 900;
+		@include adaptiveValue("font-size", 20, 16);
+		line-height: 120%; /* 24/20 */
+		padding-bottom: 6px;
+	}
+
+	&__text {
+		font-weight: 500;
+		@include adaptiveValue("font-size", 16, 14);
+		line-height: 125%; /* 20/16 */
+	}
+}
+
+// catalog ====================================================================================================//
+
+.catalog {
+	@include adaptiveValue("padding-top", 110, 40);
+	@include adaptiveValue("padding-bottom", 75, 30);
+	background-color: #FBF6ED;
+
+	&__container {
+	}
+
+	&__title {
+		@include adaptiveValue("padding-bottom", 50, 30);
+	}
+
+	&__button-block {
+		display: flex;
+		justify-content: space-between;
+		@include adaptiveValue("padding-bottom", 70, 35);
+	}
+
+	&__content {
+		display: flex;
+	}
+
+	&__item {
+		flex: 0 1 33.333%;
+		//padding: 30px 45px 45px 45px;
+		@include adaptiveValue("padding-top", 30, 20);
+		@include adaptiveValue("padding-bottom", 45, 25);
+		@include adaptiveValue("padding-right", 45, 20);
+		@include adaptiveValue("padding-left", 45, 20);
+	}
+}
+
+///////////////////
+
+.block-button {
+
+	&__button {
+		padding: 16px 50px;
+		border: 1px solid #A9A9A9;
+		border-radius: 100px;
+		font-weight: 500;
+		@include adaptiveValue("font-size", 16, 14);
+		line-height: 125%; /* 20/16 */
+		color: #777777;
+		cursor: pointer;
+	}
+}
+
+///////////////////
+
+.item-catalog {
+	background-color: #fff;
+	box-shadow: 0px 10px 30px rgba(89, 71, 38, 0.08);
+	border-radius: 20px;
+
+	&__header {
+		display: flex;
+	}
+
+	&__image {
+		@include adaptiveValue("padding-bottom", 26, 20);
+	}
+
+	&__body {
+	}
+
+	&__prices {
+	}
+}
+
+///////////////////
+
+.item-catalog-header {
+	@include adaptiveValue("padding-bottom", 26, 20);
+
+	&__age {
+		display: flex;
+		align-items: center;
+		@include adaptiveValue("padding-right", 20, 15);
+	}
+
+	&__icon {
+		padding-right: 8px;
+	}
+
+	&__text {
+		font-size: 13px;
+		line-height: 123.076923%; /* 16/13 */
+	}
+
+	&__tribute {
+		flex: 1 1 auto;
+		display: flex;
+		align-items: center;
+	}
+
+	&__toilet {
+	}
+}
+
+///////////////////
+
+.body-item-catalog {
+
+	&__title {
+		font-weight: 700;
+		@include adaptiveValue("font-size", 19, 16);
+		line-height: 118.75%; /* 19/16 */
+		@include adaptiveValue("padding-bottom", 15, 13);
+	}
+
+	&__text {
+		@include adaptiveValue("font-size", 15, 13);
+		line-height: 140%; /* 21/15 */
+		@include adaptiveValue("padding-bottom", 20, 16);
+	}
+
+	&__feature {
+		display: flex;
+	}
+}
+
+///////////////////
+
+.feature-body-item-catalog {
+	text-transform: uppercase;
+	font-size: 14px;
+	@include adaptiveValue("padding-bottom", 40, 30);
+
+	&__one {
+		position: relative;
+		margin-left: 13px;
+		padding-right: 16px;
+		&::after {
+			content: '';
+			position: absolute;
+			top: 2px;
+			left: -15px;
+			height: 10px;
+			width: 10px;
+			background-color: #FF8A00;
+			border-radius: 50%;
+		}
+	}
+
+	&__two {
+		position: relative;
+		margin-left: 13px;
+		&::after {
+			content: '';
+			position: absolute;
+			top: 2px;
+			left: -15px;
+			height: 10px;
+			width: 10px;
+			background-color: #9250FE;
+			border-radius: 50%;
+		}
+	}
+}
+
+///////////////////
+
+.prices-item-catalog {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	&__price {
+		font-weight: 700;
+		@include adaptiveValue("font-size", 22, 18);
+		line-height: 122.727273%; /* 27/22 */
+		color: #32B71D;
+	}
+
+	&__icon {
+	}
 }
