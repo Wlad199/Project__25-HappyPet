@@ -486,6 +486,7 @@
 
 	&__body {
 		display: flex;
+		margin: 0px 0px 0px -23px;
 		@media (max-width: 767px) {
 			flex-wrap: wrap;
 		}
@@ -496,52 +497,61 @@
 		@media (max-width: 767px) {
 			flex: 0 1 50%;
 		}
+		&_3 {
+			margin-top: -30px;
+		}
 	}
 
 	&__item {
 		position: relative;
+		transition: all 0.5s ease 0s;
+		opacity: .9;
 		&:hover {
+			opacity: 1;
 			.gallery__icon{
 				opacity: 1;
 				cursor: pointer;
 			}
 		}
 		img {
-			max-width: 100%;
+			//max-width: 100%;
+			width: 108%;
 		}
-		transition: all 0.3s ease 0s;
-		//&:hover {
-		//	&::after{
-		//		content: '';
-		//		position: absolute;
-		//		top: 50%;
-		//		left: 50%;
-		//		height: 100%;
-		//		width: 100%;
-		//		transform: translate(-8%, -10%);
-		//		background: url('@img/gallery/icon/scale.svg') 0 0 no-repeat;
-		//		z-index: 20;
-		//		transition: all 0.3s ease 0s;
-		//	}
-		//}
-		//position: relative;
 		&_1 {
 			filter: drop-shadow(0px 5px 30px rgba(100, 89, 78, 0.33));
+			&:hover{
+				filter: drop-shadow(0px 5px 30px rgba(100, 89, 78, 0.8));
+			}
 		}
 		&_2 {
 			filter: drop-shadow(0px 5px 30px rgba(53, 206, 248, 0.41));
+			&:hover{
+				filter: drop-shadow(0px 5px 30px rgba(53, 206, 248, 0.9));
+			}
 		}
 		&_3 {
 			filter: drop-shadow(0px 5px 30px rgba(202, 190, 193, 0.78));
+			&:hover{
+				filter: drop-shadow(0px 5px 30px rgba(202, 190, 193, 0.9));
+			}
 		}
 		&_4 {
 			filter: drop-shadow(0px 5px 30px rgba(150, 96, 60, 0.49));
+			&:hover{
+				filter: drop-shadow(0px 5px 30px rgba(150, 96, 60, 0.8));
+			}
 		}
 		&_5 {
 			filter: drop-shadow(0px 8px 40px rgba(25, 94, 95, 0.46));
+			&:hover{
+				filter: drop-shadow(0px 8px 40px rgba(25, 94, 95, 0.8));
+			}
 		}
 		&_6 {
 			filter: drop-shadow(0px 5px 30px rgba(147, 112, 95, 0.47));
+			&:hover{
+				filter: drop-shadow(0px 5px 30px rgba(147, 112, 95, 0.8));
+			}
 		}
 	}
 
@@ -552,5 +562,9 @@
 		transform: translate(-50%, -50%);
 		transition: all 0.3s ease 0s;
 		opacity: 0;
+		@media (max-width: 767px) {
+			transform: scale(1.5)translate(-35%,-35%);
+			//transform: translate(-50%);
+		}
 	}
 }
