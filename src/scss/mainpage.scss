@@ -280,16 +280,30 @@
 
 	&__content {
 		display: flex;
-		@include adaptiveValue("gap", 30, 20);
+		@include adaptiveValue("gap", 30, 10, 1170, 992, 2);
+		flex-wrap: wrap;
+		@media (max-width: 992px) {
+			@include adaptiveValue("gap", 30, 10, 992, 320, 1);
+			justify-content: space-around;
+		}
+
 	}
 
 	&__item {
-		flex: 0 1 33.333%;
+		flex: 0 1 31%;
 		//padding: 30px 45px 45px 45px;
 		@include adaptiveValue("padding-top", 30, 20);
 		@include adaptiveValue("padding-bottom", 45, 25);
-		@include adaptiveValue("padding-right", 45, 20);
-		@include adaptiveValue("padding-left", 45, 20);
+		@include adaptiveValue("padding-right", 45, 20, 1170, 992, 2);
+		@include adaptiveValue("padding-left", 45, 20, 1170, 992, 2);
+		@media (max-width: 992px) {
+			@include adaptiveValue("padding-right", 45, 20, 992, 320, 1);
+			@include adaptiveValue("padding-left", 45, 20, 992, 320, 1);
+			flex: 0 1 40%;
+		}
+		@media (max-width: 700px) {
+			flex: 0 1 100%;
+		}
 	}
 }
 
