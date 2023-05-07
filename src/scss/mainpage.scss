@@ -277,6 +277,7 @@
 
 	&__content {
 		display: flex;
+		@include adaptiveValue("gap", 30, 20);
 	}
 
 	&__item {
