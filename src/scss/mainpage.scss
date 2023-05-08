@@ -1,6 +1,5 @@
 
 .page {
-	padding-bottom: 200px;
 }
 
 // main-screen ====================================================================================================//
@@ -709,12 +708,14 @@
 		position: absolute;
 		bottom: 0;
 		right: -70px;
+		transition: all 0.3s ease 0s;
+		&:hover {
+			background-color: #b30933;
+			transform: rotate(-30deg);
+		}
 	}
 
 	&__checkbox {
-		background-color: #F52456;
-		border-radius: 50%;
-		padding-right: 100px;
 	}
 }
 .questions-form {
@@ -800,10 +801,16 @@
 		font-weight: 500;
 		font-size: 14px;
 		line-height: 121.428571%; /* 17/14 */
-		//color: #999999;
 		opacity: .4;
+		transition: all 0.3s ease 0s;
+		&:hover {
+			opacity: .5;
+		}
 		&:not(:last-child){
 			padding-bottom: 14px;
+		}
+		&._form-focus{
+			display: none;
 		}
 	}
 }

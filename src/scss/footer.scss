@@ -1,3 +1,58 @@
-//====================================================================================================
+.footer {
+	@include adaptiveValue("padding-top", 64, 30);
+	@include adaptiveValue("padding-bottom", 75, 40);
+	background-color: #000;
 
-//====================================================================================================
+	&__container {
+	}
+
+	&__body {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		color: #fff;
+	}
+
+	&__column {
+	}
+
+	&__logo {
+		img{
+			transition: all 0.3s ease 0s;
+		}
+		img:hover{
+			transform: skew(-3deg, 3deg);
+		}
+	}
+
+	&__copy {
+	}
+
+	&__arrow {
+		display: block;
+		transition: all 0.3s ease 0s;
+		&:hover{
+			transform: scale(1.3);
+		}
+	}
+
+	&__call {
+		transition: all 0.3s ease 0s;
+		&:hover{
+			transform: skew(3deg, -3deg);
+		}
+	}
+}
+.call-footer {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+
+	&__icon {
+	}
+
+	&__number {
+		font-weight: 700;
+		font-size: 15px;
+	}
+}
