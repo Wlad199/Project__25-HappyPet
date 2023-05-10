@@ -47,7 +47,7 @@ flsForms.formFieldsInit({ viewPass: false });
 //===================//
 
 // Плавная навигация по странице
-// flsScroll.pageNavigation();
+flsScroll.pageNavigation();
 //===================//
 
 //Попапы. Сниппет (HTML): pl

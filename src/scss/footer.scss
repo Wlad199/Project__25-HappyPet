@@ -22,6 +22,7 @@
 
 	&__column {
 		flex: 0 1 auto;
+		padding: 0px 15px;
 		@media (max-width: 767px) {
 			flex: 0 1 100%;
 			margin-bottom: 15px;
